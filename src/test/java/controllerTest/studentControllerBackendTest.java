@@ -3,12 +3,14 @@ package controllerTest;
 import com.example.firstapp_forjunitandintegrationtesting.FirstAppForUnitAndIntegrationTestsApplication;
 import controller.StudentController;
 import domain.Student;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.web.server.ResponseStatusException;
 import repositories.StudentRepo;
@@ -20,7 +22,8 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @ExtendWith(MockitoExtension.class)
 @ContextConfiguration(classes = {FirstAppForUnitAndIntegrationTestsApplication.class})
@@ -65,5 +68,11 @@ public class studentControllerBackendTest {
     public void getStudentByIdFailedTest() {
         assertThrows(ResponseStatusException.class, ()->this.studentController.getStudentById(anyLong()));
         verify(this.studentRepo).findById(anyLong());
+    }
+
+    @Test
+    public void createStudentSuccessfulTest() {
+        given(this.studentRepo.save(any(Student.class))).willReturn(this.student); // when save() method is called, it should return any Student.class for createStudent() to be successful.
+        assertEquals(this.student, this.studentRepo.save(this.student)); // when createStudent() method returns an object, it must be of type Student.class.
     }
 }

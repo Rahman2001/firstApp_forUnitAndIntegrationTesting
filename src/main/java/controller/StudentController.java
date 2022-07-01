@@ -54,7 +54,8 @@ public class StudentController {
 
         if(this.studentRepo.findStudentByNameAndEmail(student.getName(), student.getEmail()) == null) {
             return this.studentRepo.save(student);
+        }else {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
-        throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
     }
 }
