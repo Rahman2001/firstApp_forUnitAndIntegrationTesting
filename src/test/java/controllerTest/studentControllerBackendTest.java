@@ -1,6 +1,6 @@
 package controllerTest;
 
-import com.example.firstapp_forjunitandintegrationtesting.FirstAppForJUnitAndIntegrationTestingApplication;
+import com.example.firstapp_forjunitandintegrationtesting.FirstAppForUnitAndIntegrationTestsApplication;
 import controller.StudentController;
 import domain.Student;
 import org.junit.jupiter.api.BeforeEach;
@@ -23,7 +23,7 @@ import static org.mockito.BDDMockito.given;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-@ContextConfiguration(classes = {FirstAppForJUnitAndIntegrationTestingApplication.class})
+@ContextConfiguration(classes = {FirstAppForUnitAndIntegrationTestsApplication.class})
 @AutoConfigureMockMvc
 public class studentControllerBackendTest {
 

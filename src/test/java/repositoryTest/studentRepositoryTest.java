@@ -1,6 +1,6 @@
 package repositoryTest;
 
-import com.example.firstapp_forjunitandintegrationtesting.FirstAppForJUnitAndIntegrationTestingApplication;
+import com.example.firstapp_forjunitandintegrationtesting.FirstAppForUnitAndIntegrationTestsApplication;
 import domain.Student;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest
-@ContextConfiguration(classes = {FirstAppForJUnitAndIntegrationTestingApplication.class})
+@ContextConfiguration(classes = {FirstAppForUnitAndIntegrationTestsApplication.class})
 @EnableAutoConfiguration
 public class studentRepositoryTest {
 

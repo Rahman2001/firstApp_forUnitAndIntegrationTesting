@@ -1,6 +1,6 @@
 package controllerTest;
 
-import com.example.firstapp_forjunitandintegrationtesting.FirstAppForJUnitAndIntegrationTestingApplication;
+import com.example.firstapp_forjunitandintegrationtesting.FirstAppForUnitAndIntegrationTestsApplication;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import domain.Student;
 import org.junit.jupiter.api.BeforeEach;
@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-@SpringBootTest(classes = {FirstAppForJUnitAndIntegrationTestingApplication.class})
+@SpringBootTest(classes = {FirstAppForUnitAndIntegrationTestsApplication.class})
 @AutoConfigureMockMvc
 public class restApiTest {
     @MockBean private StudentRepo studentRepo; // replaces a real bean in the application context with mock one because, in our case, we don't want to test real repo since we have already tested it in isolation.

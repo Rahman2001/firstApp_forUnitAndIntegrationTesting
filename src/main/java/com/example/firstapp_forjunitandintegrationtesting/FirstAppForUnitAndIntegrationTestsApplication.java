@@ -10,10 +10,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @ComponentScan(basePackages = {"controller", "repositories"})
 @EntityScan(basePackages = {"domain"})
 @EnableJpaRepositories(basePackages = {"repositories"})
-public class FirstAppForJUnitAndIntegrationTestingApplication {
+public class FirstAppForUnitAndIntegrationTestsApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(FirstAppForJUnitAndIntegrationTestingApplication.class, args);
+        SpringApplication.run(FirstAppForUnitAndIntegrationTestsApplication.class, args);
     }
 
 }
